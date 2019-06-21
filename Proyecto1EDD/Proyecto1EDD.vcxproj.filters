@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de origen\Menu">
+      <UniqueIdentifier>{9565fccf-8f48-4047-9c4e-d9fd654b7134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nodos">
+      <UniqueIdentifier>{d18b9de8-6c51-4a71-81b9-c306f4c2cd94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Estructuras">
+      <UniqueIdentifier>{57b0d4cd-8977-47c3-b6a9-872b2042deb9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Proyecto1EDD.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="DatoMatriz.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrizDispersa.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoArbol.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="ArbolBinarioBusqueda.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoContenido.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoCabecera.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaVertical.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaHorizontal.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoLateral.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="Cabecera.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaLate.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
