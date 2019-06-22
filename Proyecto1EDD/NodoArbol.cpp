@@ -10,5 +10,10 @@ public:
 	int valor;
 	NodoArbol *izq;
 	NodoArbol *dere;
-
+	NodoArbol(int n) {
+		this->valor = n;
+		matrix = new MatrizDispersa();
+		izq = NULL;
+		dere = NULL;
+	}
 };

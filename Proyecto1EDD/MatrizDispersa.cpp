@@ -11,6 +11,8 @@
 #pragma once
 class MatrizDispersa {
 public:
+	NodoCabecera *temp1;
+	NodoLateral *temp2;
 	Cabecera *listaCab;
 	listaLate *listlat;
 	MatrizDispersa() {
@@ -34,8 +36,7 @@ public:
 		if (listlat->buscar(y)==false) {
 			listlat->insertar(new NodoLateral(y));
 		}
-		NodoCabecera *temp1;
-		NodoLateral *temp2;
+	
 		temp1 = listaCab->buscarNodo(x);
 		temp2 = listlat->buscarNodo(y);
 		temp1->colum->insertar(nuevo);

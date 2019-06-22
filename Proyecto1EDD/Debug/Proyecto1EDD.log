@@ -2,17 +2,24 @@
   ArbolBinarioBusqueda.cpp
   Cabecera.cpp
   DatoMatriz.cpp
+  ListaCapas.cpp
   ListaHorizontal.cpp
+  ListaIm.cpp
+  ListaImagenes.cpp
   ListaLate.cpp
   ListaVertical.cpp
   MatrizDispersa.cpp
   Menu.cpp
   NodoArbol.cpp
   NodoCabecera.cpp
+  NodoCabecera_Imagen.cpp
+  NodoCapa.cpp
   NodoContenido.cpp
   NodoLateral.cpp
   Proyecto1EDD.cpp
   Generando código...
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listaimagenes.cpp(71): warning C4715: 'ListaImagenes::retNodo': no todas las rutas de acceso de control devuelven un valor
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(70): warning C4715: 'ArbolBinarioBusqueda::mostrarArbole': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\cabecera.cpp(95): warning C4715: 'Cabecera::buscar': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listalate.cpp(96): warning C4715: 'listaLate::buscar': no todas las rutas de acceso de control devuelven un valor
   Proyecto1EDD.vcxproj -> C:\Users\EG\source\repos\Proyecto1EDD\Debug\Proyecto1EDD.exe

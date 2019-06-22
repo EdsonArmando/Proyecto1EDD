@@ -6,16 +6,22 @@
 #include "ArbolBinarioBusqueda.cpp"
 #include "MatrizDispersa.cpp"
 #include "NodoLateral.cpp"
+#include "ListaIm.cpp"
+#include "NodoCabecera_Imagen.cpp"
+#pragma once
 using namespace std;
 class Menu {
 private:
 	int opcion = 0;
 	NodoLateral *no;
 	string ruta,linea,texto;
+	NodoCabecera_Imagen *nod;
 	ifstream archivoEntrada;
 	MatrizDispersa matrix;
 	ArbolBinarioBusqueda ar;
+
 public:
+	
 	void iniciarMenu() {
 		cout << "Bienvenido al sistema" << endl;
 		cout << "1. Carga de datos" << endl;
@@ -33,6 +39,7 @@ public:
 			leerArchivo(ruta,"capa");
 			cout << "Ingrese ruta para Imagenes" << endl;
 			cin >> ruta;
+			leerArchivo(ruta, "imagen");
 			cout << "Ingrese ruta para Usuarios" << endl;
 			cin >> ruta;
 			system("cls");
@@ -99,10 +106,11 @@ public:
 		leerDatos(texto,tipo);
 	}
 	void leerDatos(string archivo,string tipo) {
-		MatrizDispersa *matrix=new MatrizDispersa();
+		NodoLateral *no;
+		MatrizDispersa *matrix = new MatrizDispersa();
 		char letra;
 		int contNum = 0;
-		string idCapa,color, columna, fila;
+		string idCapa,color, columna, fila,idImagen;
 		int op = 0;
 		int lon = archivo.length();
 		if (tipo=="capa") {
@@ -119,7 +127,6 @@ public:
 						op = 0;
 						break;
 					case '}':
-						ar.insertarNodo(raiz, std::stoi(idCapa),matrix);
 						contNum = 0;
 						idCapa = "";
 						op = 0;
@@ -151,8 +158,8 @@ public:
 					break;
 				case 1:
 					if (letra== '{') {
-						
 						//idCapa = "";
+						ar.insertarNodo(raiz, std::stoi(idCapa));
 						op = 0;
 					}
 					else {
@@ -179,8 +186,13 @@ public:
 					break;
 				case 4:
 					if (letra == ';') {
-						cout << fila << " " << columna << " " << color << endl;
-						matrix->insertar(std::stoi(columna), std::stoi(fila),color);						
+						//cout << fila << " " << columna << " " << color << endl;
+						NodoArbol *temp = ar.mostrarArbole(raiz, std::stoi(idCapa));
+						temp->matrix->insertar(std::stoi(columna), std::stoi(fila), color);
+						//matrix->insertar(std::stoi(columna), std::stoi(fila),color);	
+						no = temp->matrix->listlat->buscarNodo(std::stoi(fila));
+						string dato = no->fila->primero->color;
+						cout << dato << endl;
 						color = "";
 						fila = "";
 						contNum = 1;
@@ -202,7 +214,70 @@ public:
 			texto = "";
 			tipo = "";
 			linea = "";
+			op = 0;
 			ar.mostrarArbol(raiz, 0);
+		}
+		else if (tipo=="imagen") {
+		ListaIm *listaI = new ListaIm();
+		for (int i = 0; i < lon; i++)
+		{
+			letra = archivo[i];
+			switch (op)
+			{
+			case 0:
+				switch (letra)
+				{
+				case ' ':
+				case '\n':
+				case '\t':
+					op = 0;
+					break;
+				case '{':
+					op = 0;
+					contNum=1;
+					//listaI->insertar();
+					break;
+				case '}':
+					if (idCapa=="") {
+						listaI->insertar("Imagen" + idImagen,0);
+					}
+					else {
+						listaI->insertar("Imagen" + idImagen, std::stoi(idCapa));
+					}
+					idCapa = "";
+					idImagen = "";
+					contNum = 0;
+					op = 0;
+					//listaI->insertar();
+					break;
+				case ',':
+					listaI->insertar("Imagen"+idImagen,std::stoi(idCapa));
+					idCapa = "";
+					op = 0;
+					//listaI->insertar();
+					break;
+				default:
+					if (isdigit(letra)&&contNum==0) {
+						idImagen += letra;
+					}
+					else if (contNum==1) {
+						idCapa += letra;
+					}
+					break;
+				}
+				break;
+			default:
+
+				break;
+			}
+			
+		}
+		nod = listaI->cabeceraIm->retNodo("Imagen1");
+		nod->lista->recorrerLista();
+		nod = listaI->cabeceraIm->retNodo("Imagen2");
+		nod->lista->recorrerLista();
+		nod = listaI->cabeceraIm->retNodo("Imagen3");
+		nod->lista->recorrerLista();
 		}
 	}
 };

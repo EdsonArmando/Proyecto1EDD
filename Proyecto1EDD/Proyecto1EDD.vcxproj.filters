@@ -71,5 +71,20 @@
     <ClCompile Include="ListaLate.cpp">
       <Filter>Estructuras</Filter>
     </ClCompile>
+    <ClCompile Include="NodoCabecera_Imagen.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaCapas.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoCapa.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaImagenes.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaIm.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
