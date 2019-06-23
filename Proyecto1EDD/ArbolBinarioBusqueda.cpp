@@ -1,6 +1,8 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <vector>
+#include <fstream>
 #include "NodoArbol.cpp"
 #include "MatrizDispersa.cpp"
 #include "NodoLateral.cpp"
@@ -9,6 +11,8 @@ using namespace std;
 static NodoArbol *raiz;
 
 class ArbolBinarioBusqueda {
+private:
+	
 public:
 	NodoLateral *no;
 	NodoCabecera *noCa;
@@ -67,5 +71,53 @@ public:
 			return mostrarArbole(raiz->dere, n);
 		}
 		
+	}
+	void reccorrerListaHorizontal(int n,int x) {
+		string dibujoMatriz = "digraph D {\n node [shape=plaintext]\n some_node [\n label=<\n <table ALIGN=\"CENTER\" border=\"0\" cellborder=\"0\" cellspacing=\"0\">\n";
+		ofstream file;
+		string matGraficar[10][10];
+		vector<int> num;
+		vector<int> fila;
+		vector<string> v;
+		NodoArbol *temp = mostrarArbole(raiz,n);
+		NodoLateral *lateral = temp->matrix->listlat->buscarNodo(x);
+		num = lateral->fila->retorX();
+		fila = temp->matrix->listlat->retListaFila();
+		string tr = dibujoMatriz+ "\n";
+		string td = "";
+		int tempX = temp->matrix->listaCab->retorPrimer();
+	
+		for (int i = 0; i < 10; i++)
+		{
+			for (int j = 0; j < 10; j++)
+			{
+				matGraficar[i][j] = "<td bgcolor=\"#f0e3ff\">     </td>";
+			}
+		}
+		for (int j = 0; j<fila.size(); j++) {
+			NodoLateral *lateral = temp->matrix->listlat->buscarNodo(fila[j]);
+			num = lateral->fila->retorX();
+			for (int i = 0; i < num.size(); i++)
+			{
+				//cout << num[i] - tempX << endl;
+				//td = td + "<td bgcolor=\"#f0e3ff\">  "+std::to_string(num[i])+"  </td>";
+				//tempX = num[i];
+				matGraficar[j+1][num[i] - 1] = "<td bgcolor=\"yellow\">     </td>";
+			}
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			td+= "<tr>\n";
+			for (int j = 0; j < 10; j++)
+			{
+				td += matGraficar[i][j];
+			}
+			td += "</tr>\n";
+		}
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Prueba.dot");
+		file << tr + td + "\n</table>>\n];\n}";
+		file.close(); 
+		system("dot -Tpng Prueba.dot -o graf.png");
+		system("graf.png");
 	}
 };

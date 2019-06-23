@@ -11,7 +11,7 @@ public:
 	NodoContenido *abajo;
 	NodoContenido *izqui;
 	NodoContenido *derech;
-	NodoContenido(string color, int x,int y) {
+	NodoContenido(string color, int y,int x) {
 		this->color = color;
 		this->x = x;
 		this->y = y;

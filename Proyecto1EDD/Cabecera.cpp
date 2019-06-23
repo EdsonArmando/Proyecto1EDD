@@ -93,6 +93,9 @@ public:
 			}
 		}
 	}
+	int retorPrimer() {
+		return primero->x;
+	}
 	NodoCabecera* buscarNodo(int x) {
 		NodoCabecera *temp=primero;
 		while (temp!=NULL)

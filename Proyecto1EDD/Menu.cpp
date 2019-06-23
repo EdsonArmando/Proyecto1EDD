@@ -7,6 +7,7 @@
 #include "MatrizDispersa.cpp"
 #include "NodoLateral.cpp"
 #include "ListaIm.cpp"
+#include "ListaHorizontal.cpp"
 #include "NodoCabecera_Imagen.cpp"
 #pragma once
 using namespace std;
@@ -19,6 +20,7 @@ private:
 	ifstream archivoEntrada;
 	MatrizDispersa matrix;
 	ArbolBinarioBusqueda ar;
+	int idCapa;
 
 public:
 	
@@ -52,6 +54,17 @@ public:
 			cout << "3. Por Capa" << endl;
 			cout << "4. Por Usuario" << endl;
 			cin >> opcion;
+			switch (opcion)
+			{
+			case 3:
+				cout << "Ingrese el idCapa" << endl;
+				cin >> idCapa;
+
+				ar.reccorrerListaHorizontal(idCapa, 2);
+				break;
+			default:
+				break;
+			}
 			system("cls");
 			iniciarMenu();
 			break;
@@ -106,7 +119,9 @@ public:
 		leerDatos(texto,tipo);
 	}
 	void leerDatos(string archivo,string tipo) {
-		NodoLateral *no;
+		NodoCabecera *no;
+		NodoArbol *temp;
+		NodoLateral *lateral;
 		MatrizDispersa *matrix = new MatrizDispersa();
 		char letra;
 		int contNum = 0;
@@ -187,12 +202,10 @@ public:
 				case 4:
 					if (letra == ';') {
 						//cout << fila << " " << columna << " " << color << endl;
-						NodoArbol *temp = ar.mostrarArbole(raiz, std::stoi(idCapa));
-						temp->matrix->insertar(std::stoi(columna), std::stoi(fila), color);
+						temp = ar.mostrarArbole(raiz, std::stoi(idCapa));
+						temp->matrix->insertar(std::stoi(fila), std::stoi(columna), color);
 						//matrix->insertar(std::stoi(columna), std::stoi(fila),color);	
-						no = temp->matrix->listlat->buscarNodo(std::stoi(fila));
-						string dato = no->fila->primero->color;
-						cout << dato << endl;
+						//no = temp->matrix->listaCab->buscarNodo(std::stoi(columna));
 						color = "";
 						fila = "";
 						contNum = 1;
@@ -215,6 +228,7 @@ public:
 			tipo = "";
 			linea = "";
 			op = 0;
+			
 			ar.mostrarArbol(raiz, 0);
 		}
 		else if (tipo=="imagen") {

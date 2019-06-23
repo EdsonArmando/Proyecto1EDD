@@ -1,0 +1,30 @@
+digraph D {
+ node [shape=plaintext]
+ some_node [
+ label=<
+ <table ALIGN="CENTER" border="0" cellborder="0" cellspacing="0">
+
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="yellow">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+<tr>
+<td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td><td bgcolor="#f0e3ff">     </td></tr>
+
+</table>>
+];
+}

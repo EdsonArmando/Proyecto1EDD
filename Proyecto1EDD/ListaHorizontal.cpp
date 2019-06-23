@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <vector>
 #include "NodoContenido.cpp"
 #pragma once
 using namespace std;
@@ -63,14 +64,29 @@ public:
 	}
 	void mostrarDatos() {
 		if (!esVacia()) {
+
 			NodoContenido *temp = primero;
 			while (temp != NULL)
 			{
-				cout << "x" << temp->x << endl;
+				cout << temp->y << ","<< temp->x << endl;
 				temp = temp->derech;
 			}
 		}
 
 	}
+	
+	vector<int> retorX() {
+		vector<int> x;
+		if (!esVacia()) {
 
+			NodoContenido *temp = primero;
+			while (temp != NULL)
+			{
+				cout << temp->y << "," << temp->x << endl;
+				x.push_back(temp->x);
+				temp = temp->derech;
+			}
+		}
+		return x;
+	}
 };

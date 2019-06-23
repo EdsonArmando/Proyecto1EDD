@@ -28,8 +28,8 @@ public:
 			}
 		}
 	}
-	void insertar(int x, int y, string color) {
-		NodoContenido *nuevo = new NodoContenido(color,x,y);
+	void insertar(int y, int x, string color) {
+		NodoContenido *nuevo = new NodoContenido(color,y,x);
 		if (listaCab->buscar(x)==false) {
 			listaCab->insertar(new NodoCabecera(x));
 		}

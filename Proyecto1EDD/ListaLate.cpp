@@ -73,6 +73,19 @@ public:
 		}
 
 	}
+	vector<int> retListaFila() {
+		vector<int> y;
+		if (!esVacia()) {
+			NodoLateral *temp = primero;
+			while (temp != NULL)
+			{
+				y.push_back(temp->y);
+				//cout << "y" << temp->y << endl;
+				temp = temp->siguiente;
+			}
+			return y;
+		}
+	}
 	bool buscar(int y) {
 		if (esVacia()) {
 			//cout << "No Existe" << endl;
