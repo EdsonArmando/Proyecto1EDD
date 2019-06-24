@@ -7,6 +7,7 @@
 #include "MatrizDispersa.cpp"
 #include "NodoLateral.cpp"
 #include "ListaIm.cpp"
+#include "ListaImagenes.cpp"
 #include "ListaHorizontal.cpp"
 #include "NodoCabecera_Imagen.cpp"
 #pragma once
@@ -19,6 +20,8 @@ private:
 	NodoCabecera_Imagen *nod;
 	ifstream archivoEntrada;
 	MatrizDispersa matrix;
+	ListaIm *listaI = new ListaIm();
+	ListaImagenes *im;
 	ArbolBinarioBusqueda ar;
 	int idCapa;
 	vector<int> capas;
@@ -107,6 +110,9 @@ public:
 			system("cls");
 			switch (opcion)
 			{
+			case 1:
+				listaI->cabeceraIm->recorrerLista();
+				break;
 			case 2:
 				ar.graficarArbol(raiz);
 				ar.mostrarArbol();
@@ -258,7 +264,7 @@ public:
 			op = 0;
 		}
 		else if (tipo=="imagen") {
-		ListaIm *listaI = new ListaIm();
+		
 		for (int i = 0; i < lon; i++)
 		{
 			letra = archivo[i];
@@ -312,12 +318,6 @@ public:
 			}
 			
 		}
-		nod = listaI->cabeceraIm->retNodo("Imagen1");
-		listaI->cabeceraIm->imagenListaImagenes();
-		nod = listaI->cabeceraIm->retNodo("Imagen2");
-		nod->lista->recorrerLista();
-		nod = listaI->cabeceraIm->retNodo("Imagen3");
-		nod->lista->recorrerLista();
 		}
 	}
 };

@@ -1,6 +1,7 @@
 digraph grafica{
 rankdir=TB;
-node [shape = record, style=filled, fillcolor=seashell2];
+ label="Arbol Binario de Capas"; 
+ node [shape = record, style=filled, fillcolor=seashell2];
 nodo1 [ label = "<C0>|1|<C1>"];
 nodo2 [ label = "<C0>|2|<C1>"];
 nodo4 [ label = "<C0>|4|<C1>"];

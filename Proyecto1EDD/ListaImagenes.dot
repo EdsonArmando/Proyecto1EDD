@@ -1,0 +1,26 @@
+digraph Sparce_Matrix {
+ node [shape=box] 
+ e0[ shape = point, width = 0 ];
+  e1[ shape = point, width = 0 ];
+Imagen1[label = "Imagen1" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen1->Imagen2
+Imagen2->Imagen1
+Imagen2[label = "Imagen2" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen2->Imagen3
+Imagen3->Imagen2
+Imagen3[label = "Imagen3" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen3->Imagen1
+Imagen1->Imagen3
+Imagen1->capa2
+capa2[label = "capa2"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa2->capa3
+capa3[label = "capa3"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa3->capa4
+capa4[label = "capa4"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen2->capa7
+capa7[label = "capa7"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa7->capa5
+capa5[label = "capa5"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa5->capa1
+capa1[label = "capa1"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen3->capa8
+capa8[label = "capa8"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+{rank = same;Imagen1; Imagen2; Imagen3; }
+}
