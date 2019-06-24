@@ -1,7 +1,6 @@
 ﻿  pch.cpp
   ArbolBinarioBusqueda.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(97): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(100): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(146): warning C4018: '<': no coinciden signed/unsigned
   Cabecera.cpp
   DatoMatriz.cpp
   ListaCapas.cpp
@@ -12,10 +11,9 @@ c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(100)
   ListaVertical.cpp
   MatrizDispersa.cpp
   Menu.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(97): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(100): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(124): warning C4101: 'lateral': variable local sin referencia
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(122): warning C4101: 'no': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(146): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(152): warning C4101: 'lateral': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(150): warning C4101: 'no': variable local sin referencia
   NodoArbol.cpp
   NodoCabecera.cpp
   NodoCabecera_Imagen.cpp
@@ -23,14 +21,12 @@ c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(122): warning C4101:
   NodoContenido.cpp
   NodoLateral.cpp
   Proyecto1EDD.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(97): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(100): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(124): warning C4101: 'lateral': variable local sin referencia
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(122): warning C4101: 'no': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(146): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(152): warning C4101: 'lateral': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(150): warning C4101: 'no': variable local sin referencia
   Generando código...
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listaimagenes.cpp(71): warning C4715: 'ListaImagenes::retNodo': no todas las rutas de acceso de control devuelven un valor
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(74): warning C4715: 'ArbolBinarioBusqueda::mostrarArbole': no todas las rutas de acceso de control devuelven un valor
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listalate.cpp(88): warning C4715: 'listaLate::retListaFila': no todas las rutas de acceso de control devuelven un valor
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listaimagenes.cpp(84): warning C4715: 'ListaImagenes::retNodo': no todas las rutas de acceso de control devuelven un valor
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(84): warning C4715: 'ArbolBinarioBusqueda::mostrarArbole': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\cabecera.cpp(95): warning C4715: 'Cabecera::buscar': no todas las rutas de acceso de control devuelven un valor
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listalate.cpp(109): warning C4715: 'listaLate::buscar': no todas las rutas de acceso de control devuelven un valor
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listalate.cpp(112): warning C4715: 'listaLate::buscar': no todas las rutas de acceso de control devuelven un valor
   Proyecto1EDD.vcxproj -> C:\Users\EG\source\repos\Proyecto1EDD\Debug\Proyecto1EDD.exe

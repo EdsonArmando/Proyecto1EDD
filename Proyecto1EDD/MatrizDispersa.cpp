@@ -11,6 +11,7 @@
 #pragma once
 class MatrizDispersa {
 public:
+	ListaVertical *ver;
 	NodoCabecera *temp1;
 	NodoLateral *temp2;
 	Cabecera *listaCab;
@@ -44,4 +45,5 @@ public:
 		//cout << "Inserto" << color << "en" << x << " ," << y << endl;
 		/*Se inserto el nodo*/
 	}
+
 };

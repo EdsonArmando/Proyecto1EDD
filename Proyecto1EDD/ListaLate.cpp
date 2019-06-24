@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "ListaHorizontal.cpp"
+#include <fstream>
 #include "NodoLateral.cpp"
 #pragma once
 using namespace std;
@@ -85,7 +86,9 @@ public:
 			}
 			return y;
 		}
+		
 	}
+	
 	bool buscar(int y) {
 		if (esVacia()) {
 			//cout << "No Existe" << endl;

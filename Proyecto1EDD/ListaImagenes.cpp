@@ -36,6 +36,19 @@ public:
 		}
 
 	}
+	void imagenListaImagenes() {
+		NodoCabecera_Imagen *temp = ultimo;
+		NodoCapa *inicio=NULL;
+		do {
+			inicio = temp->lista->ultimo;
+			while (inicio!=NULL)
+			{
+				cout << inicio->idCapa << endl;
+				inicio = inicio->siguiente;
+			}
+			temp = temp->siguiente;
+		} while (temp != ultimo);
+	}
 	void recorrerLista() {
 		NodoCabecera_Imagen *temp=ultimo;
 		do {

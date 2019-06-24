@@ -12,7 +12,9 @@ static NodoArbol *raiz;
 
 class ArbolBinarioBusqueda {
 private:
-	
+	string inicio = "digraph grafica{\nrankdir=TB;\n label=\"Arbol Binario de Capas\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
+	string nodes;
+	string rela;
 public:
 	NodoLateral *no;
 	NodoCabecera *noCa;
@@ -39,19 +41,27 @@ public:
 			}
 		}
 	}
-	void mostrarArbol(NodoArbol *raiz,int cont) {
-		NodoArbol *temp=raiz;
-		if (raiz==NULL) {
-			return;
-		}
-		else {
-			mostrarArbol(raiz->dere,cont+1);
-			for (int i = 0; i < cont; i++)
-			{
-				cout << "  ";
+	void mostrarArbol() {
+		ofstream file;
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Arbol.dot");
+		file <<inicio+nodes+rela+"\n}";
+		file.close();
+		system("dot -Tpng Arbol.dot -o graf2.png");
+		system("graf2.png");
+	}
+	void graficarArbol(NodoArbol *raiz) {
+		
+		NodoArbol *temp = raiz;
+		if (raiz!=NULL) {
+			nodes = nodes + "nodo" + std::to_string(raiz->valor) + " " + "[ label = \"<C0>|" + std::to_string(raiz->valor) + "|<C1>\"" + "];\n";
+			if (raiz->izq!=NULL) {
+				rela = rela + "nodo"+std::to_string(raiz->valor)+":C0->"+"nodo"+std::to_string(raiz->izq->valor)+"\n";
 			}
-			cout << raiz->valor << endl;
-			mostrarArbol(raiz->izq,cont+1);
+			if (raiz->dere != NULL) {
+				rela = rela + "nodo" + std::to_string(raiz->valor) + ":C1->" + "nodo" + std::to_string(raiz->dere->valor) + "\n";
+			}
+			graficarArbol(raiz->izq);
+			graficarArbol(raiz->dere);
 		}
 	}
 	bool esVacio() {
@@ -73,51 +83,96 @@ public:
 		
 	}
 	void reccorrerListaHorizontal(int n,int x) {
+		NodoArbol *temp = mostrarArbole(raiz,n);
 		string dibujoMatriz = "digraph D {\n node [shape=plaintext]\n some_node [\n label=<\n <table ALIGN=\"CENTER\" border=\"0\" cellborder=\"0\" cellspacing=\"0\">\n";
 		ofstream file;
 		string matGraficar[10][10];
-		vector<int> num;
-		vector<int> fila;
-		vector<string> v;
-		NodoArbol *temp = mostrarArbole(raiz,n);
-		NodoLateral *lateral = temp->matrix->listlat->buscarNodo(x);
-		num = lateral->fila->retorX();
-		fila = temp->matrix->listlat->retListaFila();
-		string tr = dibujoMatriz+ "\n";
+		string tr = dibujoMatriz + "\n";
 		string td = "";
-		int tempX = temp->matrix->listaCab->retorPrimer();
-	
 		for (int i = 0; i < 10; i++)
 		{
 			for (int j = 0; j < 10; j++)
 			{
-				matGraficar[i][j] = "<td bgcolor=\"#f0e3ff\">     </td>";
+				matGraficar[i][j] = "<td bgcolor=\"white\">     </td>";
 			}
 		}
-		for (int j = 0; j<fila.size(); j++) {
-			NodoLateral *lateral = temp->matrix->listlat->buscarNodo(fila[j]);
-			num = lateral->fila->retorX();
-			for (int i = 0; i < num.size(); i++)
+		for (int i = 0; i < 5; i++)
+		{
+
+		}
+		if (!temp->matrix->listlat->esVacia()) {
+			NodoLateral *tempo = temp->matrix->listlat->primero;
+			NodoContenido *nodo = NULL;
+			while (tempo != NULL)
 			{
-				//cout << num[i] - tempX << endl;
-				//td = td + "<td bgcolor=\"#f0e3ff\">  "+std::to_string(num[i])+"  </td>";
-				//tempX = num[i];
-				matGraficar[j+1][num[i] - 1] = "<td bgcolor=\"yellow\">     </td>";
+				nodo = tempo->fila->primero;
+				while (nodo!=NULL)
+				{
+					matGraficar[nodo->y][nodo->x-1] = "<td bgcolor=\""+nodo->color+"\">     </td>";
+					nodo = nodo->derech;
+				}
+				tempo = tempo->siguiente;
 			}
 		}
 		for (int i = 0; i < 10; i++)
 		{
-			td+= "<tr>\n";
+			td += "<tr>\n";
 			for (int j = 0; j < 10; j++)
 			{
 				td += matGraficar[i][j];
 			}
 			td += "</tr>\n";
 		}
-		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Prueba.dot");
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Prueba1.dot");
 		file << tr + td + "\n</table>>\n];\n}";
 		file.close(); 
-		system("dot -Tpng Prueba.dot -o graf.png");
-		system("graf.png");
+		system("dot -Tpng Prueba1.dot -o graf1.png");
+		system("graf1.png");
+	}
+	void reccorrerListaHorizontal(vector<int> capas) {
+		NodoArbol *temp;
+		string dibujoMatriz = "digraph D {\n node [shape=plaintext]\n some_node [\n label=<\n <table ALIGN=\"CENTER\" border=\"0\" cellborder=\"0\" cellspacing=\"0\">\n";
+		ofstream file;
+		string matGraficar[15][15];
+		string tr = dibujoMatriz + "\n";
+		string td = "";
+		for (int i = 0; i < 15; i++)
+		{
+			for (int j = 0; j < 15; j++)
+			{
+				matGraficar[i][j] = "<td bgcolor=\"white\">     </td>";
+			}
+		}
+		for (int o = 0; o < capas.size();o++) {
+			temp = mostrarArbole(raiz, capas[o]);
+			if (!temp->matrix->listlat->esVacia()) {
+				NodoLateral *tempo = temp->matrix->listlat->primero;
+				NodoContenido *nodo = NULL;
+				while (tempo != NULL)
+				{
+					nodo = tempo->fila->primero;
+					while (nodo != NULL)
+					{
+						matGraficar[nodo->y][nodo->x - 1] = "<td bgcolor=\"" + nodo->color + "\">     </td>";
+						nodo = nodo->derech;
+					}
+					tempo = tempo->siguiente;
+				}
+			}
+		}
+		for (int i = 0; i < 15; i++)
+		{
+			td += "<tr>\n";
+			for (int j = 0; j < 15; j++)
+			{
+				td += matGraficar[i][j];
+			}
+			td += "</tr>\n";
+		}
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Prueba1.dot");
+		file << tr + td + "\n</table>>\n];\n}";
+		file.close();
+		system("dot -Tpng Prueba1.dot -o graf1.png");
+		system("graf1.png");
 	}
 };

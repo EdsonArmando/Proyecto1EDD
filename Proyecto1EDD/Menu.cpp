@@ -21,6 +21,7 @@ private:
 	MatrizDispersa matrix;
 	ArbolBinarioBusqueda ar;
 	int idCapa;
+	vector<int> capas;
 
 public:
 	
@@ -56,10 +57,28 @@ public:
 			cin >> opcion;
 			switch (opcion)
 			{
+			case 1:
+				cout << "1. Preorden" << endl;
+				cout << "2. Inorden" << endl;
+				cout << "3. PostOrden" << endl;
+				cin >> opcion;
+				switch (opcion)
+				{
+				case 1:
+					cout << "Ingrese no Capas" << endl;
+					cin >> opcion;
+					capas.push_back(1);
+					capas.push_back(2);
+					ar.reccorrerListaHorizontal(capas);
+					capas.clear();
+					break;
+				default:
+					break;
+				}
+				break;
 			case 3:
 				cout << "Ingrese el idCapa" << endl;
 				cin >> idCapa;
-
 				ar.reccorrerListaHorizontal(idCapa, 2);
 				break;
 			default:
@@ -86,6 +105,15 @@ public:
 			cout << "6. Ver arbol de usuarios" << endl;
 			cin >> opcion;
 			system("cls");
+			switch (opcion)
+			{
+			case 2:
+				ar.graficarArbol(raiz);
+				ar.mostrarArbol();
+				break;
+			default:
+				break;
+			}
 			iniciarMenu();
 			break;
 		case 5:
@@ -228,8 +256,6 @@ public:
 			tipo = "";
 			linea = "";
 			op = 0;
-			
-			ar.mostrarArbol(raiz, 0);
 		}
 		else if (tipo=="imagen") {
 		ListaIm *listaI = new ListaIm();
@@ -287,7 +313,7 @@ public:
 			
 		}
 		nod = listaI->cabeceraIm->retNodo("Imagen1");
-		nod->lista->recorrerLista();
+		listaI->cabeceraIm->imagenListaImagenes();
 		nod = listaI->cabeceraIm->retNodo("Imagen2");
 		nod->lista->recorrerLista();
 		nod = listaI->cabeceraIm->retNodo("Imagen3");
