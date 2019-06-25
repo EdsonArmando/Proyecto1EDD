@@ -86,5 +86,17 @@
     <ClCompile Include="ListaIm.cpp">
       <Filter>Estructuras</Filter>
     </ClCompile>
+    <ClCompile Include="NodoAVL.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoImagenUsuario.cpp">
+      <Filter>Nodos</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaImagenesUsuariocpp.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
+    <ClCompile Include="ArbolAVL.cpp">
+      <Filter>Estructuras</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

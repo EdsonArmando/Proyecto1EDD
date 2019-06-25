@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <cstring>
 #include <fstream>
 #include "ArbolBinarioBusqueda.cpp"
 #include "MatrizDispersa.cpp"
@@ -10,6 +11,8 @@
 #include "ListaImagenes.cpp"
 #include "ListaHorizontal.cpp"
 #include "NodoCabecera_Imagen.cpp"
+#include "ArbolAVL.cpp"
+#include "NodoAVL.cpp"
 #pragma once
 using namespace std;
 class Menu {
@@ -23,7 +26,10 @@ private:
 	ListaIm *listaI = new ListaIm();
 	ListaImagenes *im;
 	ArbolBinarioBusqueda ar;
+	ArbolAVL arb;
 	int idCapa;
+	int noCapas;
+	string capass,imag;
 	vector<int> capas;
 
 public:
@@ -48,6 +54,7 @@ public:
 			leerArchivo(ruta, "imagen");
 			cout << "Ingrese ruta para Usuarios" << endl;
 			cin >> ruta;
+			leerArchivo(ruta, "usuario");
 			system("cls");
 			iniciarMenu();
 			break;
@@ -68,16 +75,41 @@ public:
 				switch (opcion)
 				{
 				case 1:
+					
 					cout << "Ingrese no Capas" << endl;
-					cin >> opcion;
-					capas.push_back(1);
-					capas.push_back(2);
-					ar.reccorrerListaHorizontal(capas);
-					capas.clear();
+					cin >> noCapas;
+					ar.recorridoPreOrden(raiz,noCapas);
+					capass = ar.retCapas();
+					ar.reccorrerListaHorizontal(capass,noCapas);
+					ar.limpiarString();
+					break;
+				case 2:
+					cout << "Ingrese no Capas" << endl;
+					cin >> noCapas;
+					ar.recorridoEnOrden(raiz,noCapas);
+					capass = ar.retCapas();
+					cout << capass << endl;
+					ar.reccorrerListaHorizontal(capass, noCapas);
+					ar.limpiarString();
+					break;
+				case 3:
+					cout << "Ingrese no Capas" << endl;
+					cin >> noCapas;
+					ar.recorridoPostOrden(raiz,noCapas);
+					capass = ar.retCapas();
+					cout << capass << endl;
+					ar.reccorrerListaHorizontal(capass, noCapas);
+					ar.limpiarString();
 					break;
 				default:
 					break;
 				}
+				break;
+			case 2:
+				cout << "Ingrese el nombre de la Imagen" << endl;
+				cin >> imag;
+				cout << listaI->cabeceraIm->listaCapas(imag) << endl;
+				ar.reccorrerListaHorizontal(listaI->cabeceraIm->listaCapas(imag), listaI->cabeceraIm->noCapas(imag));
 				break;
 			case 3:
 				cout << "Ingrese el idCapa" << endl;
@@ -117,6 +149,10 @@ public:
 				ar.graficarArbol(raiz);
 				ar.mostrarArbol();
 				break;
+			case 6:
+				arb.graficarAVLeImagenes(primer);
+				arb.mostrarArbol();
+				break;
 			default:
 				break;
 			}
@@ -153,6 +189,7 @@ public:
 		leerDatos(texto,tipo);
 	}
 	void leerDatos(string archivo,string tipo) {
+		NodoAvl *avlN;
 		NodoCabecera *no;
 		NodoArbol *temp;
 		NodoLateral *lateral;
@@ -318,6 +355,60 @@ public:
 			}
 			
 		}
+		archivo = "";
+		texto = "";
+		tipo = "";
+		linea = "";
+		op = 0;
+		}
+		else if (tipo=="usuario") {
+		string nombreUser,imagen;
+		for (int i = 0; i < lon; i++)
+		{
+			letra = archivo[i];
+			switch (letra)
+			{
+			case ' ':
+			case '\n':
+			case '\t':
+				break;
+			case ',':
+				avlN = arb.devNodo(primer, nombreUser);
+				avlN->list->insertar("Imagen"+imagen);
+				imagen = "";
+				break;
+			case ';':
+				if (imagen=="") {
+				
+				}
+				else {
+					avlN = arb.devNodo(primer, nombreUser);
+					avlN->list->insertar("Imagen" + imagen);
+					imagen = "";
+					nombreUser = "";
+				}
+				break;
+			case ':':
+				arb.insertar(nombreUser);
+				break;
+			default:	
+				if (isdigit(letra)) {
+					imagen +=letra;
+				}
+				else {
+					nombreUser += letra;
+				}
+				
+				break;
+			}
+		}
+		/*avlN = arb.devNodo(primer, "userA");
+		avlN->list->recorrerLista();*/
+		archivo = "";
+		texto = "";
+		tipo = "";
+		linea = "";
+		op = 0;
 		}
 	}
 };

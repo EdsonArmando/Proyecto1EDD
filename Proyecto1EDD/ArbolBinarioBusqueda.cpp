@@ -15,31 +15,21 @@ private:
 	string inicio = "digraph grafica{\nrankdir=TB;\n label=\"Arbol Binario de Capas\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
 	string nodes;
 	string rela;
+	string capas;
 public:
 	NodoLateral *no;
 	NodoCabecera *noCa;
 	void insertarNodo(NodoArbol *&raiz,int n) {
-		if (raiz==NULL) {
+		if (raiz ==NULL) {
 			NodoArbol *nuevo = new NodoArbol(n);
-			//nuevo->matrix = matrix;
-			nuevo->izq = NULL;
-			nuevo->dere = NULL;
-			/*no = matrix->listlat->buscarNodo(0);
-			string dato = no->fila->primero->color;
-			cout << dato << endl;
-			noCa = matrix->listaCab->buscarNodo(1);
-			string datos = noCa->colum->primero->abajo->color;
-			cout << datos << endl;*/
 			raiz = nuevo;
-		}else{
-			int valRaiz = raiz->valor;
-			if (n<valRaiz) {
-				insertarNodo(raiz->izq,n);
-			}
-			else {
-				insertarNodo(raiz->dere,n);
-			}
-		}
+			raiz->izq = NULL;
+			raiz->dere = NULL;
+		}else if (n < raiz->valor) 
+			insertarNodo(raiz->izq, n);
+		
+		else if (n > raiz->valor) 
+			insertarNodo(raiz->dere, n);
 	}
 	void mostrarArbol() {
 		ofstream file;
@@ -83,22 +73,19 @@ public:
 		
 	}
 	void reccorrerListaHorizontal(int n,int x) {
+		
 		NodoArbol *temp = mostrarArbole(raiz,n);
 		string dibujoMatriz = "digraph D {\n node [shape=plaintext]\n some_node [\n label=<\n <table ALIGN=\"CENTER\" border=\"0\" cellborder=\"0\" cellspacing=\"0\">\n";
 		ofstream file;
-		string matGraficar[10][10];
+		string matGraficar[45][45];
 		string tr = dibujoMatriz + "\n";
 		string td = "";
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 45; i++)
 		{
-			for (int j = 0; j < 10; j++)
+			for (int j = 0; j < 45; j++)
 			{
 				matGraficar[i][j] = "<td bgcolor=\"white\">     </td>";
 			}
-		}
-		for (int i = 0; i < 5; i++)
-		{
-
 		}
 		if (!temp->matrix->listlat->esVacia()) {
 			NodoLateral *tempo = temp->matrix->listlat->primero;
@@ -114,10 +101,10 @@ public:
 				tempo = tempo->siguiente;
 			}
 		}
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 45; i++)
 		{
 			td += "<tr>\n";
-			for (int j = 0; j < 10; j++)
+			for (int j = 0; j < 45; j++)
 			{
 				td += matGraficar[i][j];
 			}
@@ -129,22 +116,43 @@ public:
 		system("dot -Tpng Prueba1.dot -o graf1.png");
 		system("graf1.png");
 	}
-	void reccorrerListaHorizontal(vector<int> capas) {
+	void reccorrerListaHorizontal(string cp,int no) {
 		NodoArbol *temp;
+
 		string dibujoMatriz = "digraph D {\n node [shape=plaintext]\n some_node [\n label=<\n <table ALIGN=\"CENTER\" border=\"0\" cellborder=\"0\" cellspacing=\"0\">\n";
 		ofstream file;
-		string matGraficar[15][15];
+		string matGraficar[45][45];
 		string tr = dibujoMatriz + "\n";
 		string td = "";
-		for (int i = 0; i < 15; i++)
+		string delim = ",";
+		int vecto[20];
+		string idC="";
+		char ik;
+		
+		int cont = 0;
+		for (int i = 0; i < cp.length(); i++)
 		{
-			for (int j = 0; j < 15; j++)
+			ik = cp[i];
+			if (ik==',') {
+				vecto[cont] = std::stoi(idC);
+				cont++;
+				idC = "";
+			}
+			else {
+				idC += ik;
+			}
+		}
+		int limite = (sizeof(vecto) / sizeof(vecto[0]));
+		for (int i = 0; i < 45; i++)
+		{
+			for (int j = 0; j < 45; j++)
 			{
 				matGraficar[i][j] = "<td bgcolor=\"white\">     </td>";
 			}
 		}
-		for (int o = 0; o < capas.size();o++) {
-			temp = mostrarArbole(raiz, capas[o]);
+		for (int o = 0; o < limite;o++) {
+			temp = mostrarArbole(raiz, vecto[o]);
+			no--;
 			if (!temp->matrix->listlat->esVacia()) {
 				NodoLateral *tempo = temp->matrix->listlat->primero;
 				NodoContenido *nodo = NULL;
@@ -159,11 +167,14 @@ public:
 					tempo = tempo->siguiente;
 				}
 			}
+			if (no==0) {
+				break;
+			}
 		}
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < 45; i++)
 		{
 			td += "<tr>\n";
-			for (int j = 0; j < 15; j++)
+			for (int j = 0; j < 45; j++)
 			{
 				td += matGraficar[i][j];
 			}
@@ -174,5 +185,52 @@ public:
 		file.close();
 		system("dot -Tpng Prueba1.dot -o graf1.png");
 		system("graf1.png");
+	}
+	void recorridoPreOrden(NodoArbol *raiz,int noCapas) {
+		if (raiz==NULL) {
+			
+		}
+		else {
+			cout << raiz->valor << " ";
+			if (noCapas!=0) {
+				capas =capas+ std::to_string(raiz->valor) + ",";
+			}
+			recorridoPreOrden(raiz->izq,noCapas--);
+			recorridoPreOrden(raiz->dere,noCapas--);
+		}
+		
+	}
+	string retCapas() {
+		return capas;
+	}
+	void limpiarString() {
+		capas = "";
+	}
+	void recorridoEnOrden(NodoArbol *raiz,int noCapas) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recorridoEnOrden(raiz->izq,noCapas--);
+			if (noCapas != 0) {
+				capas = capas + std::to_string(raiz->valor) + ",";
+			}
+			cout << raiz->valor << " ";
+			
+			recorridoEnOrden(raiz->dere,noCapas--);
+		}
+	}
+	void recorridoPostOrden(NodoArbol *raiz,int noCapas) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recorridoPostOrden(raiz->izq,noCapas--);
+			recorridoPostOrden(raiz->dere,noCapas--);
+			if (noCapas != 0) {
+				capas = capas + std::to_string(raiz->valor) + ",";
+			}
+			cout << raiz->valor << " ";
+		}
 	}
 };

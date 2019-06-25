@@ -154,6 +154,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArbolAVL.cpp" />
     <ClCompile Include="ArbolBinarioBusqueda.cpp" />
     <ClCompile Include="Cabecera.cpp" />
     <ClCompile Include="DatoMatriz.cpp" />
@@ -161,15 +162,18 @@
     <ClCompile Include="ListaHorizontal.cpp" />
     <ClCompile Include="ListaIm.cpp" />
     <ClCompile Include="ListaImagenes.cpp" />
+    <ClCompile Include="ListaImagenesUsuariocpp.cpp" />
     <ClCompile Include="ListaLate.cpp" />
     <ClCompile Include="ListaVertical.cpp" />
     <ClCompile Include="MatrizDispersa.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="NodoArbol.cpp" />
+    <ClCompile Include="NodoAVL.cpp" />
     <ClCompile Include="NodoCabecera.cpp" />
     <ClCompile Include="NodoCabecera_Imagen.cpp" />
     <ClCompile Include="NodoCapa.cpp" />
     <ClCompile Include="NodoContenido.cpp" />
+    <ClCompile Include="NodoImagenUsuario.cpp" />
     <ClCompile Include="NodoLateral.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

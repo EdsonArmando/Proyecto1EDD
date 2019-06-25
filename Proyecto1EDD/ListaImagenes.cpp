@@ -67,6 +67,7 @@ public:
 
 	}
 	void recorrerLista() {
+		listaIma = "";
 		NodoCabecera_Imagen *temp=ultimo;
 		do {
 			listaIma = listaIma+temp->nombreImagen + "[label = \"" + temp->nombreImagen + "\" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];";
@@ -78,6 +79,45 @@ public:
 		} while (temp!= ultimo);
 		rank = rank + "}";
 		imagenListaImagenes();
+	}
+	string listaCapas(string imagen) {
+		string capas;
+		NodoCabecera_Imagen *temp = ultimo;
+		NodoCapa *inicio = NULL;
+		do {
+			inicio = temp->lista->ultimo;
+			if (temp->nombreImagen==imagen) {
+				while (inicio != NULL)
+				{
+					
+						capas = capas + std::to_string(inicio->idCapa)+",";
+						inicio = inicio->siguiente;
+				}
+			}
+			temp = temp->siguiente;
+
+		} while (temp != ultimo);
+		return capas;
+	}
+	int noCapas(string imagen) {
+		int capas=0;
+		NodoCabecera_Imagen *temp = ultimo;
+		NodoCapa *inicio = NULL;
+		do {
+			inicio = temp->lista->ultimo;
+			if (temp->nombreImagen == imagen) {
+				while (inicio != NULL)
+				{
+					
+						capas++;
+					
+					inicio = inicio->siguiente;
+				}
+			}
+			temp = temp->siguiente;
+
+		} while (temp != ultimo);
+		return capas;
 	}
 	bool buscar(string nombre) {
 		if (esVacia()==true) {
