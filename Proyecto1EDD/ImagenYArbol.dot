@@ -32,6 +32,27 @@ nodo9:C0->nodo8
 nodo9:C1->nodo10
 nodo13:C0->nodo12
 nodo13:C1->nodo100
+}subgraph cluster_1 {
+ label="Imagen";
+  Imagen3 [shape=record]
+Imagen3->capa0
+capa0 [shape=circle]
+capa0->capa1
+capa1 [shape=circle]
+capa1->capa2
+capa2 [shape=circle]
+capa2->capa3
+capa3 [shape=circle]
+capa3->capa4
+capa4 [shape=circle]
+capa4->capa5
+capa5 [shape=circle]
+capa0->nodo0
+capa1->nodo1
+capa2->nodo2
+capa3->nodo3
+capa4->nodo4
+capa5->nodo5
 
 }
 }

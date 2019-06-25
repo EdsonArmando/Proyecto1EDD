@@ -66,6 +66,42 @@ public:
 		system("graf2.png");
 
 	}
+	void imagenArbol(string nombre,string abb) {
+		string img = "subgraph cluster_1 {\n label=\"Imagen\";\n  ";
+		string lis;
+		string rela;
+		ofstream file;
+		NodoCabecera_Imagen *temp = ultimo;
+		NodoCapa *inicio = NULL;
+		do {
+			if (temp->nombreImagen==nombre) {
+				inicio = temp->lista->ultimo;
+				lis = lis+temp->nombreImagen + " [shape=record]\n";
+				lis = lis + temp->nombreImagen + "->" + "capa" + std::to_string(inicio->idCapa) + "\n";
+				while (inicio != NULL)
+				{
+					lis = lis  +"capa" + std::to_string(inicio->idCapa)+" [shape=circle]\n";
+					if (inicio->siguiente != NULL) {
+						lis = lis + "capa" + std::to_string(inicio->idCapa) + "->" + "capa" + std::to_string(inicio->siguiente->idCapa) + "\n";
+						rela = rela +"capa" + std::to_string(inicio->idCapa) +"->" + "nodo"+ std::to_string(inicio->idCapa)+"\n";
+					}
+					if (inicio->siguiente == NULL) {
+						rela = rela + "capa" + std::to_string(inicio->idCapa) + "->" + "nodo" + std::to_string(inicio->idCapa) + "\n";
+					}
+					inicio = inicio->siguiente;
+				}
+
+			}
+			temp = temp->siguiente;
+
+		} while (temp != ultimo);
+		abb.erase(abb.length()-1);
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/ImagenYArbol.dot");
+		file << abb+"\n}"+img + lis + rela+ "\n}\n}";
+		file.close();
+		system("dot -Tpng ImagenYArbol.dot -o ImagenYaRBOL.png");
+		system("ImagenYaRBOL.png");
+	}
 	void recorrerLista() {
 		listaIma = "";
 		NodoCabecera_Imagen *temp=ultimo;

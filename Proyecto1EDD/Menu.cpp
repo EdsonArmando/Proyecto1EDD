@@ -28,8 +28,9 @@ private:
 	ArbolBinarioBusqueda ar;
 	ArbolAVL arb;
 	int idCapa;
+	string arbolBinario="";
 	int noCapas;
-	string capass,imag;
+	string capass,imag,nomIm;
 	vector<int> capas;
 
 public:
@@ -142,12 +143,17 @@ public:
 			system("cls");
 			switch (opcion)
 			{
+			case 5:
+				cout << "Ingrese nombre Imagen" << endl;
+				cin >> nomIm;
+				listaI->cabeceraIm->imagenArbol(nomIm,arbolBinario);
+				break;
 			case 1:
 				listaI->cabeceraIm->recorrerLista();
 				break;
 			case 2:
 				ar.graficarArbol(raiz);
-				ar.mostrarArbol();
+				arbolBinario= ar.mostrarArbol();
 				break;
 			case 6:
 				arb.graficarAVLeImagenes(primer);

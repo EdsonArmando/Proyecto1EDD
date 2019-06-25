@@ -12,7 +12,7 @@ static NodoArbol *raiz;
 
 class ArbolBinarioBusqueda {
 private:
-	string inicio = "digraph grafica{\nrankdir=TB;\n label=\"Arbol Binario de Capas\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
+	string inicio = "digraph grafica{\nrankdir=TB;\n subgraph cluster_0{\n label=\"Arbol Binario de Capas\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
 	string nodes;
 	string rela;
 	string capas;
@@ -31,13 +31,14 @@ public:
 		else if (n > raiz->valor) 
 			insertarNodo(raiz->dere, n);
 	}
-	void mostrarArbol() {
+	string mostrarArbol() {
 		ofstream file;
 		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/Arbol.dot");
-		file <<inicio+nodes+rela+"\n}";
+		file <<inicio+nodes+rela+"\n}\n}";
 		file.close();
 		system("dot -Tpng Arbol.dot -o graf2.png");
 		system("graf2.png");
+		return inicio + nodes + rela;
 	}
 	void graficarArbol(NodoArbol *raiz) {
 		
