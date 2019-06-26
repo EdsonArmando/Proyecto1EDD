@@ -30,7 +30,7 @@ private:
 	int idCapa;
 	string arbolBinario="";
 	int noCapas;
-	string capass,imag,nomIm;
+	string capass,imag,nomIm,usuario,nuevoNombre;
 	vector<int> capas;
 
 public:
@@ -117,6 +117,12 @@ public:
 				cin >> idCapa;
 				ar.reccorrerListaHorizontal(idCapa, 2);
 				break;
+			case 4:
+				cout << "Ingrese el nombre Usuario" << endl;
+				cin >> usuario;
+				imag=arb.imaUsuario(usuario);
+				ar.reccorrerListaHorizontal(listaI->cabeceraIm->listaCapas(imag), listaI->cabeceraIm->noCapas(imag));
+				break;
 			default:
 				break;
 			}
@@ -128,6 +134,42 @@ public:
 			cout << "1. Usuarios" << endl;
 			cout << "2. Imagenes" << endl;
 			cin >> opcion;
+			switch (opcion)
+			{
+			case 1:
+				cout << "Menu de Usuario" << endl;
+				cout << "1. IngresarUsuario" << endl;
+				cout << "2. EditarUsuario" << endl;
+				cin >> opcion;
+				switch (opcion)
+				{
+				case 1:
+					cout << "Ingrese el nombre Usuario " << endl;
+					cin >> usuario;
+					arb.insertar(usuario);
+					break;
+				case 2:
+					cout << "Ingrese el nombre Usuario a Modificar" << endl;
+					cin >> usuario;
+					cout << "Nuevo Nombre del Usuario" << endl;
+					cin >> nuevoNombre;
+					arb.cambiarNombre(primer,usuario,nuevoNombre);
+					break;
+				default:
+					break;
+				}
+				break;
+			case 2:
+				cout << "Ingrese el nombre Usuario " << endl;
+				cin >> usuario;
+				cout << "Ingrese el idImagen " << endl;
+				cin >> opcion;
+				arb.ingersarImagenUsuario(usuario,"Imagen"+std::to_string(opcion));
+				break;
+			default:
+
+				break;
+			}
 			system("cls");
 			iniciarMenu();
 			break;

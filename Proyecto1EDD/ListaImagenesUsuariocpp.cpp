@@ -29,4 +29,19 @@ public:
 			temp = temp->siguiente;
 		}
 	}
+	bool verificarImagen(string nombre) {
+		NodoImagenUsuario* temp = primero;
+		if (primero==NULL) {
+			return false;
+		}
+		while (temp != NULL)
+		{
+			if (temp->nombreImagen==nombre) {
+				return true;
+			}
+			cout << temp->nombreImagen << endl;
+			temp = temp->siguiente;
+		}
+		return false;
+	}
 };

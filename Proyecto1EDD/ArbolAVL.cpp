@@ -1,6 +1,8 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include <fstream>
 #include "NodoAVL.cpp"
 #include "NodoImagenUsuario.cpp"
@@ -21,6 +23,31 @@ public:
 		if (N == NULL)
 			return 0;
 		return N->altura;
+	}
+	void ingersarImagenUsuario(string usuario,string imagen) {
+		NodoAvl *temp = devNodo(primer, usuario);
+		
+		if (temp->list->verificarImagen(imagen)==false) {
+			temp->list->insertar(imagen);
+		}
+		else {
+			cout << "La imagen ya existe" << endl;
+			system("pause");
+		}
+	}
+	string imaUsuario(string nombre) {
+		string opcion;
+		int cont = 0;
+		NodoAvl *temp = devNodo(primer,nombre);
+		NodoImagenUsuario *temp2 = temp->list->primero;
+		cout << "Ingrese el nombre de la imagen" << endl;
+		while (temp2!=NULL)
+		{
+			cout << std::to_string(cont++)+". " + temp2->nombreImagen << endl;
+			temp2 = temp2->siguiente;
+		}
+		cin >> opcion;
+		return opcion;
 	}
 	void mostrarArbol() {
 		ofstream file;
@@ -155,6 +182,21 @@ public:
 		}
 		else {
 			return devNodo(raiz->derecha, n);
+		}
+	}
+
+	NodoAvl * cambiarNombre(NodoAvl *raiz, string nom,string nuevo) {
+		if (raiz == NULL) {
+
+		}
+		else if (raiz->nombreUsuar == nom) {
+			raiz->nombreUsuar = nuevo;
+		}
+		else if (nom < raiz->nombreUsuar) {
+			return cambiarNombre(raiz->izquierda, nom,nuevo);
+		}
+		else {
+			return cambiarNombre(raiz->derecha, nom,nuevo);
 		}
 	}
 };

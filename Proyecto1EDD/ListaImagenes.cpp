@@ -66,6 +66,15 @@ public:
 		system("graf2.png");
 
 	}
+	int imagenUsuario(string nombre) {
+		NodoCabecera_Imagen *temp = ultimo;
+		do {
+			
+			temp = temp->siguiente;
+
+		} while (temp != ultimo);
+		return 0;
+	}
 	void imagenArbol(string nombre,string abb) {
 		string img = "subgraph cluster_1 {\n label=\"Imagen\";\n  ";
 		string lis;
