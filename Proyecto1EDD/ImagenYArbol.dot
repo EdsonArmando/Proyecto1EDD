@@ -34,25 +34,49 @@ nodo13:C0->nodo12
 nodo13:C1->nodo100
 }subgraph cluster_1 {
  label="Imagen";
-  Imagen3[shape=box,width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];
-Imagen3->capa0
-capa0 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa0->capa1
-capa1 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa1->capa2
-capa2 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa2->capa3
-capa3 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa3->capa4
-capa4 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa4->capa5
+  Imagen7[shape=box,width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];
+Imagen7->capa13
+capa13 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa13->capa12
+capa12 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa12->capa11
+capa11 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa11->capa10
+capa10 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa10->capa9
+capa9 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa9->capa8
+capa8 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa8->capa7
+capa7 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa7->capa6
+capa6 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa6->capa5
 capa5 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
-capa0->nodo0
-capa1->nodo1
-capa2->nodo2
-capa3->nodo3
-capa4->nodo4
+capa5->capa4
+capa4 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa4->capa3
+capa3 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa3->capa2
+capa2 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa2->capa1
+capa1 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa1->capa0
+capa0 [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa13->nodo13
+capa12->nodo12
+capa11->nodo11
+capa10->nodo10
+capa9->nodo9
+capa8->nodo8
+capa7->nodo7
+capa6->nodo6
 capa5->nodo5
+capa4->nodo4
+capa3->nodo3
+capa2->nodo2
+capa1->nodo1
+capa0->nodo0
 
 }
 }
