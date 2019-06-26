@@ -199,4 +199,34 @@ public:
 			return cambiarNombre(raiz->derecha, nom,nuevo);
 		}
 	}
+	void recoPost(NodoAvl *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recoPost(raiz->izquierda);
+			recoPost(raiz->derecha);
+			cout << raiz->nombreUsuar << " ";
+		}
+	}
+	void recoIn(NodoAvl *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recoIn(raiz->izquierda);
+			cout << raiz->nombreUsuar << " ";
+			recoIn(raiz->derecha);
+		}
+	}
+	void recoPre(NodoAvl *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			cout << raiz->nombreUsuar << " ";
+			recoPre(raiz->izquierda);
+			recoPre(raiz->derecha);
+		}
+	}
 };

@@ -66,7 +66,6 @@ public:
 			NodoCabecera *temp = primero;
 			while (temp != NULL)
 			{
-				cout << "x" << temp->x << endl;
 				temp = temp->siguiente;
 			}
 		}
@@ -74,7 +73,6 @@ public:
 	}
 	bool buscar(int x) {
 		if (esVacia()) {
-			cout << "No Existe" << endl;
 			return false;
 		}
 		else {
@@ -82,11 +80,11 @@ public:
 			while (temp!=NULL)
 			{
 				if (temp->x==x) {
-					cout << "Existe" << endl;
+					
 					return true;
 				}
 				else if (temp->siguiente==NULL) {
-					cout << "No se encontro" << endl;
+					
 					return false;
 				}
 				temp = temp->siguiente;
@@ -108,7 +106,7 @@ public:
 			}
 			temp = temp->siguiente;
 		}
-		cout << "No se encontro" << endl;
+		
 		return (new NodoCabecera(-1));
 	}
 };

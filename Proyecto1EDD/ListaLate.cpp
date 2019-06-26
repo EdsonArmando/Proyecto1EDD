@@ -68,7 +68,7 @@ public:
 			NodoLateral *temp = primero;
 			while (temp != NULL)
 			{
-				//cout << "y" << temp->y << endl;
+				
 				temp = temp->siguiente;
 			}
 		}
@@ -81,7 +81,7 @@ public:
 			while (temp != NULL)
 			{
 				y.push_back(temp->y);
-				//cout << "y" << temp->y << endl;
+				
 				temp = temp->siguiente;
 			}
 			return y;
@@ -91,7 +91,7 @@ public:
 	
 	bool buscar(int y) {
 		if (esVacia()) {
-			//cout << "No Existe" << endl;
+			
 			return false;
 		}
 		else {
@@ -99,11 +99,11 @@ public:
 			while (temp != NULL)
 			{
 				if (temp->y == y) {
-					//cout << "Existe" << endl;
+					
 					return true;
 				}
 				else if (temp->siguiente == NULL) {
-					//cout << "No se encontro" << endl;
+				
 					return false;
 				}
 				temp = temp->siguiente;
@@ -122,7 +122,7 @@ public:
 			}
 			temp = temp->siguiente;
 		}
-		//cout << "No se encontro" << endl;
+		
 		return (new NodoLateral(-1));
 	}
 };

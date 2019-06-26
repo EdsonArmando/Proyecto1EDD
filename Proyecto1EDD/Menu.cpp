@@ -191,6 +191,11 @@ public:
 				ar.Graficar2(raiz);
 				ar.mostrarArbol2();
 				break;
+			case 4:
+				cout << "Ingrese el idCapa" << endl;
+				cin >> idCapa;
+				ar.reccorrerListaHorizontal(idCapa, 2);
+				break;
 			case 5:
 				cout << "Ingrese nombre Imagen" << endl;
 				cin >> nomIm;
@@ -224,6 +229,54 @@ public:
 			cout << "8. Listar usuarios en recorrido: preorden,inorden,postorden,por niveles" << endl;
 			cin >> opcion;
 			system("cls");
+			switch (opcion)
+			{
+			case 1:
+
+				break;
+			case 2:
+				break;
+			case 3:
+				cout << "Profundidad" << endl;
+				cout << ar.profundidad(raiz)<< endl;
+				system("pause");
+				break;
+			case 4:
+				ar.recoPost(raiz);
+				system("pause");
+				break;
+			case 5:
+				cout << "PreOrden" << endl;
+				ar.recoPre(raiz);
+				cout << "" << endl;
+				cout << "PostOrden" << endl;
+				ar.recoPost(raiz);
+				cout << "" << endl;
+				cout << "inOrden" << endl;
+				ar.recoIn(raiz);
+				cout << "" << endl;
+				system("pause");
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				cout << "PreOrden" << endl;
+				arb.recoPre(primer);
+				cout << "" << endl;
+				cout << "PostOrden" << endl;
+				arb.recoPost(primer);
+				cout << "" << endl;
+				cout << "inOrden" << endl;
+				arb.recoIn(primer);
+				cout << "" << endl;
+				system("pause");
+				break;
+
+			default:
+				break;
+			}
 			iniciarMenu();
 			break;
 		default:

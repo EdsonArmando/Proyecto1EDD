@@ -277,4 +277,61 @@ public:
 			cout << raiz->valor << " ";
 		}
 	}
+	void recoPost(NodoArbol *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recoPost(raiz->izq);
+			recoPost(raiz->dere);
+			cout << raiz->valor << " ";
+		}
+	}
+	void recoIn(NodoArbol *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			recoIn(raiz->izq);
+			cout << raiz->valor << " ";
+			recoIn(raiz->dere);
+		}
+	}
+	int alt;
+	void recoPre(NodoArbol *raiz) {
+		if (raiz == NULL) {
+
+		}
+		else {
+			cout << raiz->valor << " ";
+			recoPre(raiz->izq);
+			recoPre(raiz->dere);
+		}
+	}
+
+	int profundidad(NodoArbol *raiz) {
+		int alt2,alt;
+		if (raiz == NULL) {
+			return -1;
+		}
+		else {
+			alt = profundidad(raiz->izq);
+			alt2 = profundidad(raiz->dere);
+
+			/*if (raiz->izq == NULL) {
+				return alt;
+				
+
+			}*/
+			if (alt>alt2) {
+				return alt + 1;
+			}
+			else {
+				return alt2 + 1;
+			}
+			//profundidad(raiz->izq);
+			
+			//profundidad(raiz->dere);
+		}
+	}
 };

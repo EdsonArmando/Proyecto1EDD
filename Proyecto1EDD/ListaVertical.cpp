@@ -66,7 +66,7 @@ public:
 			NodoContenido *temp = primero;
 			while (temp != NULL)
 			{
-				cout << "y" << temp->y << endl;
+				
 				temp = temp->abajo;
 			}
 		}

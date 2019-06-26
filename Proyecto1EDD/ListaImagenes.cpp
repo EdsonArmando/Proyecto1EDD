@@ -70,6 +70,32 @@ public:
 		rank;
 
 	}
+	int imagenesMasCapas() {
+		int capaInicio = 0;
+		int capas=0;
+		NodoCabecera_Imagen *temp = ultimo;
+		NodoCapa *inicio = NULL;
+		do {
+			inicio = temp->lista->ultimo;
+			
+				while (inicio != NULL)
+				{
+					capas++;
+					inicio = inicio->siguiente;
+				}
+				
+				if (capas>capaInicio) {
+					
+				}
+				else
+				{
+
+				}
+			temp = temp->siguiente;
+
+		} while (temp != ultimo);
+		return capas;
+	}
 	int imagenUsuario(string nombre) {
 		NodoCabecera_Imagen *temp = ultimo;
 		do {
@@ -79,6 +105,7 @@ public:
 		} while (temp != ultimo);
 		return 0;
 	}
+
 	void imagenArbol(string nombre,string abb) {
 		string img = "subgraph cluster_1 {\n label=\"Imagen\";\n  ";
 		string lis;

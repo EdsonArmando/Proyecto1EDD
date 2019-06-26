@@ -68,7 +68,7 @@ public:
 			NodoContenido *temp = primero;
 			while (temp != NULL)
 			{
-				cout << temp->y << ","<< temp->x << endl;
+				
 				temp = temp->derech;
 			}
 		}
@@ -82,7 +82,7 @@ public:
 			NodoContenido *temp = primero;
 			while (temp != NULL)
 			{
-				cout << temp->y << "," << temp->x << endl;
+				
 				x.push_back(temp->x);
 				temp = temp->derech;
 			}
