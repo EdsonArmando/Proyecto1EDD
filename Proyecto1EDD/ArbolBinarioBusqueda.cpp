@@ -203,7 +203,7 @@ public:
 		
 	}
 
-	void inOrder( NodoArbol* raiz)
+	void Graficar2( NodoArbol* raiz)
 	{
 		if (raiz == NULL) {
 			return;
@@ -216,8 +216,8 @@ public:
 			if (raiz->dere != NULL) {
 				relass = relass + "nodo" + std::to_string(raiz->valor) + ":C1->" + "nodo" + std::to_string(raiz->dere->valor) + "\n";
 			}
-			inOrder(raiz->izq);
-			inOrder(raiz->dere);
+			Graficar2(raiz->izq);
+			Graficar2(raiz->dere);
 		}
 	}
 	void mostrarArbol2() {

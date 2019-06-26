@@ -188,7 +188,7 @@ public:
 			{
 			case 3:
 				ar.arbolEsp(raiz);
-				ar.inOrder(raiz);
+				ar.Graficar2(raiz);
 				ar.mostrarArbol2();
 				break;
 			case 5:
