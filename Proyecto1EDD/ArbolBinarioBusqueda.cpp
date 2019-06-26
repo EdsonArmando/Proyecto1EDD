@@ -13,9 +13,10 @@ static NodoArbol *raiz;
 class ArbolBinarioBusqueda {
 private:
 	string inicio = "digraph grafica{\nrankdir=TB;\n subgraph cluster_0{\n label=\"Arbol Binario de Capas\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
-	string nodes;
-	string rela;
-	string capas;
+	string inicio2 = "digraph grafica{\nrankdir=TB;\n subgraph cluster_0{\n label=\"Arbol Binario de Espejo\"; \n node [shape = record, style=filled, fillcolor=seashell2];\n";
+	string nodes,nodess;
+	string rela,relass;
+	string capas,capass;
 public:
 	NodoLateral *no;
 	NodoCabecera *noCa;
@@ -187,6 +188,47 @@ public:
 		system("dot -Tpng Prueba1.dot -o graf1.png");
 		system("graf1.png");
 	}
+	void arbolEsp(NodoArbol *raiz) {
+		
+		if (raiz!=NULL) {
+			NodoArbol *tm;
+			cout << raiz->valor << " ";
+			arbolEsp(raiz->izq);
+			arbolEsp(raiz->dere);
+			tm = raiz->izq;
+			raiz->izq = raiz->dere;
+			raiz->dere = tm;
+		 
+		}
+		
+	}
+
+	void inOrder( NodoArbol* raiz)
+	{
+		if (raiz == NULL) {
+			return;
+		}
+		else {
+			nodess = nodess + "nodo" + std::to_string(raiz->valor) + " " + "[ label = \"<C0>|" + std::to_string(raiz->valor) + "|<C1>\"" + "];\n";
+			if (raiz->izq != NULL) {
+				relass = relass + "nodo" + std::to_string(raiz->valor) + ":C0->" + "nodo" + std::to_string(raiz->izq->valor) + "\n";
+			}
+			if (raiz->dere != NULL) {
+				relass = relass + "nodo" + std::to_string(raiz->valor) + ":C1->" + "nodo" + std::to_string(raiz->dere->valor) + "\n";
+			}
+			inOrder(raiz->izq);
+			inOrder(raiz->dere);
+		}
+	}
+	void mostrarArbol2() {
+		ofstream file;
+		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/ArbolEpejo.dot");
+		file << inicio2 + nodess + relass + "\n}\n}";
+		file.close();
+		system("dot -Tpng ArbolEpejo.dot -o graf7.png");
+		system("graf7.png");
+		
+	}
 	void recorridoPreOrden(NodoArbol *raiz,int noCapas) {
 		if (raiz==NULL) {
 			
@@ -221,6 +263,7 @@ public:
 			recorridoEnOrden(raiz->dere,noCapas--);
 		}
 	}
+
 	void recorridoPostOrden(NodoArbol *raiz,int noCapas) {
 		if (raiz == NULL) {
 

@@ -1,7 +1,7 @@
 ﻿  pch.cpp
   ArbolAVL.cpp
   ArbolBinarioBusqueda.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(134): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(135): warning C4018: '<': no coinciden signed/unsigned
   Cabecera.cpp
   DatoMatriz.cpp
   ListaCapas.cpp
@@ -13,9 +13,9 @@ c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(134)
   ListaVertical.cpp
   MatrizDispersa.cpp
   Menu.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(134): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(243): warning C4101: 'lateral': variable local sin referencia
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(241): warning C4101: 'no': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(135): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(249): warning C4101: 'lateral': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(247): warning C4101: 'no': variable local sin referencia
   NodoArbol.cpp
   NodoAVL.cpp
   NodoCabecera.cpp
@@ -27,13 +27,13 @@ c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(241): warning C4101:
   Compilando...
   NodoLateral.cpp
   Proyecto1EDD.cpp
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(134): warning C4018: '<': no coinciden signed/unsigned
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(243): warning C4101: 'lateral': variable local sin referencia
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(241): warning C4101: 'no': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(135): warning C4018: '<': no coinciden signed/unsigned
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(249): warning C4101: 'lateral': variable local sin referencia
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\menu.cpp(247): warning C4101: 'no': variable local sin referencia
   Generando código...
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\listaimagenes.cpp(191): warning C4715: 'ListaImagenes::retNodo': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolavl.cpp(201): warning C4715: 'ArbolAVL::cambiarNombre': no todas las rutas de acceso de control devuelven un valor
-c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(75): warning C4715: 'ArbolBinarioBusqueda::mostrarArbole': no todas las rutas de acceso de control devuelven un valor
+c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolbinariobusqueda.cpp(76): warning C4715: 'ArbolBinarioBusqueda::mostrarArbole': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolavl.cpp(186): warning C4715: 'ArbolAVL::devNodo': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\arbolavl.cpp(121): warning C4715: 'ArbolAVL::maxValor': no todas las rutas de acceso de control devuelven un valor
 c:\users\eg\source\repos\proyecto1edd\proyecto1edd\cabecera.cpp(95): warning C4715: 'Cabecera::buscar': no todas las rutas de acceso de control devuelven un valor

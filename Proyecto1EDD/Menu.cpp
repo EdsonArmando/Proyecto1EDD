@@ -25,6 +25,7 @@ private:
 	MatrizDispersa matrix;
 	ListaIm *listaI = new ListaIm();
 	ListaImagenes *im;
+	NodoArbol *espe;
 	ArbolBinarioBusqueda ar;
 	ArbolAVL arb;
 	int idCapa;
@@ -185,6 +186,11 @@ public:
 			system("cls");
 			switch (opcion)
 			{
+			case 3:
+				ar.arbolEsp(raiz);
+				ar.inOrder(raiz);
+				ar.mostrarArbol2();
+				break;
 			case 5:
 				cout << "Ingrese nombre Imagen" << endl;
 				cin >> nomIm;
