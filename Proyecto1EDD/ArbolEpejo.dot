@@ -1,7 +1,7 @@
 digraph grafica{
 rankdir=TB;
  subgraph cluster_0{
- label="Arbol Binario de Capas"; 
+ label="Arbol Binario de Espejo"; 
  node [shape = record, style=filled, fillcolor=seashell2];
 nodo7 [ label = "<C0>|7|<C1>"];
 nodo11 [ label = "<C0>|11|<C1>"];

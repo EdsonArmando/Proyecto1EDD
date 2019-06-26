@@ -41,22 +41,24 @@ public:
 
 	}
 	void imagenListaImagenes() {
+		int cont = 0;
 		ofstream file;
 		NodoCabecera_Imagen *temp = ultimo;
 		NodoCapa *inicio=NULL;
 		do {
 			inicio = temp->lista->ultimo;
-			listaIma = listaIma + temp->nombreImagen + "->" + "capa" + std::to_string(inicio->idCapa) + "\n";
+			listaIma = listaIma + temp->nombreImagen + "->" + "capa" + std::to_string(inicio->idCapa) + std::to_string(cont) + "\n";
 			while (inicio!=NULL)
 			{
-				listaIma = listaIma + "capa"+std::to_string(inicio->idCapa) + "[label = \"capa"+std::to_string(inicio->idCapa)+"\"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];\n";
+				listaIma = listaIma + "capa"+std::to_string(inicio->idCapa)+std::to_string(cont) + "[label = \"capa"+std::to_string(inicio->idCapa)+"\"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];\n";
 				if (inicio->siguiente!=NULL) {
-					listaIma = listaIma + "capa" + std::to_string(inicio->idCapa) + "->" + "capa" + std::to_string(inicio->siguiente->idCapa) + "\n";
+					listaIma = listaIma + "capa" + std::to_string(inicio->idCapa) + std::to_string(cont) + "->" + "capa" + std::to_string(inicio->siguiente->idCapa) + std::to_string(cont) + "\n";
 				}
 				inicio = inicio->siguiente;
 			}
 			
 			temp = temp->siguiente;
+			cont++;
 
 		} while (temp != ultimo);
 		file.open("C:/Users/EG/source/repos/Proyecto1EDD/Proyecto1EDD/ListaImagenes.dot");
@@ -64,6 +66,8 @@ public:
 		file.close();
 		system("dot -Tpng ListaImagenes.dot -o graf2.png");
 		system("graf2.png");
+		listaIma = "";
+		rank;
 
 	}
 	int imagenUsuario(string nombre) {
@@ -85,11 +89,11 @@ public:
 		do {
 			if (temp->nombreImagen==nombre) {
 				inicio = temp->lista->ultimo;
-				lis = lis+temp->nombreImagen + " [shape=record]\n";
+				lis = lis+temp->nombreImagen + "[shape=box,width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];\n";
 				lis = lis + temp->nombreImagen + "->" + "capa" + std::to_string(inicio->idCapa) + "\n";
 				while (inicio != NULL)
 				{
-					lis = lis  +"capa" + std::to_string(inicio->idCapa)+" [shape=circle]\n";
+					lis = lis  +"capa" + std::to_string(inicio->idCapa)+" [shape=ellipse width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];\n";
 					if (inicio->siguiente != NULL) {
 						lis = lis + "capa" + std::to_string(inicio->idCapa) + "->" + "capa" + std::to_string(inicio->siguiente->idCapa) + "\n";
 						rela = rela +"capa" + std::to_string(inicio->idCapa) +"->" + "nodo"+ std::to_string(inicio->idCapa)+"\n";

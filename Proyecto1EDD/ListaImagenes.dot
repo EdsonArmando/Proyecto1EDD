@@ -1,0 +1,120 @@
+digraph Sparce_Matrix {
+ node [shape=box] 
+ e0[ shape = point, width = 0 ];
+  e1[ shape = point, width = 0 ];
+Imagen1[label = "Imagen1" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen1->Imagen2
+Imagen2->Imagen1
+Imagen2[label = "Imagen2" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen2->Imagen3
+Imagen3->Imagen2
+Imagen3[label = "Imagen3" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen3->Imagen4
+Imagen4->Imagen3
+Imagen4[label = "Imagen4" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen4->Imagen5
+Imagen5->Imagen4
+Imagen5[label = "Imagen5" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen5->Imagen6
+Imagen6->Imagen5
+Imagen6[label = "Imagen6" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen6->Imagen7
+Imagen7->Imagen6
+Imagen7[label = "Imagen7" width = 1.5 style = filled, fillcolor = lightskyblue, group = 2 ];Imagen7->Imagen1
+Imagen1->Imagen7
+Imagen1->capa00
+capa00[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa00->capa10
+capa10[label = "capa1"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa10->capa20
+capa20[label = "capa2"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa20->capa30
+capa30[label = "capa3"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa30->capa40
+capa40[label = "capa4"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa40->capa50
+capa50[label = "capa5"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa50->capa60
+capa60[label = "capa6"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa60->capa70
+capa70[label = "capa7"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa70->capa80
+capa80[label = "capa8"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa80->capa90
+capa90[label = "capa9"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa90->capa100
+capa100[label = "capa10"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa100->capa110
+capa110[label = "capa11"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa110->capa120
+capa120[label = "capa12"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa120->capa130
+capa130[label = "capa13"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen2->capa51
+capa51[label = "capa5"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa51->capa61
+capa61[label = "capa6"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa61->capa71
+capa71[label = "capa7"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa71->capa81
+capa81[label = "capa8"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa81->capa91
+capa91[label = "capa9"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa91->capa101
+capa101[label = "capa10"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen3->capa02
+capa02[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa02->capa12
+capa12[label = "capa1"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa12->capa22
+capa22[label = "capa2"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa22->capa32
+capa32[label = "capa3"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa32->capa42
+capa42[label = "capa4"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa42->capa52
+capa52[label = "capa5"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen4->capa03
+capa03[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa03->capa1003
+capa1003[label = "capa100"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen5->capa124
+capa124[label = "capa12"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa124->capa04
+capa04[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen6->capa135
+capa135[label = "capa13"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa135->capa125
+capa125[label = "capa12"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa125->capa95
+capa95[label = "capa9"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa95->capa45
+capa45[label = "capa4"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa45->capa05
+capa05[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa05->capa15
+capa15[label = "capa1"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+Imagen7->capa136
+capa136[label = "capa13"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa136->capa126
+capa126[label = "capa12"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa126->capa116
+capa116[label = "capa11"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa116->capa106
+capa106[label = "capa10"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa106->capa96
+capa96[label = "capa9"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa96->capa86
+capa86[label = "capa8"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa86->capa76
+capa76[label = "capa7"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa76->capa66
+capa66[label = "capa6"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa66->capa56
+capa56[label = "capa5"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa56->capa46
+capa46[label = "capa4"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa46->capa36
+capa36[label = "capa3"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa36->capa26
+capa26[label = "capa2"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa26->capa16
+capa16[label = "capa1"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+capa16->capa06
+capa06[label = "capa0"width = 1.5 style = filled, fillcolor = bisque1, group = 1 ];
+{rank = same;Imagen1; Imagen2; Imagen3; Imagen4; Imagen5; Imagen6; Imagen7; }
+}
